@@ -20,21 +20,25 @@ public class Foo implements Serializable {
     private final String name;
     private final Integer[] nums;
     private final LocalDate date;
+    private final Integer bar;
 
     public Foo(Foo value) {
         this.name = value.name;
         this.nums = value.nums;
         this.date = value.date;
+        this.bar = value.bar;
     }
 
     public Foo(
         String name,
         Integer[] nums,
-        LocalDate date
+        LocalDate date,
+        Integer bar
     ) {
         this.name = name;
         this.nums = nums;
         this.date = date;
+        this.bar = bar;
     }
 
     /**
@@ -56,6 +60,13 @@ public class Foo implements Serializable {
      */
     public LocalDate getDate() {
         return this.date;
+    }
+
+    /**
+     * Getter for <code>public.foo.bar</code>.
+     */
+    public Integer getBar() {
+        return this.bar;
     }
 
     @Override
@@ -85,6 +96,12 @@ public class Foo implements Serializable {
         }
         else if (!this.date.equals(other.date))
             return false;
+        if (this.bar == null) {
+            if (other.bar != null)
+                return false;
+        }
+        else if (!this.bar.equals(other.bar))
+            return false;
         return true;
     }
 
@@ -95,6 +112,7 @@ public class Foo implements Serializable {
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.nums == null) ? 0 : Arrays.hashCode(this.nums));
         result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+        result = prime * result + ((this.bar == null) ? 0 : this.bar.hashCode());
         return result;
     }
 
@@ -105,6 +123,7 @@ public class Foo implements Serializable {
         sb.append(name);
         sb.append(", ").append(Arrays.toString(nums));
         sb.append(", ").append(date);
+        sb.append(", ").append(bar);
 
         sb.append(")");
         return sb.toString();

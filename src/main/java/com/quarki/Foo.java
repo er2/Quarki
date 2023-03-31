@@ -5,5 +5,6 @@ import java.util.List;
 
 public record Foo(String name,
                   List<Integer> nums,
-                  LocalDate date) {
+                  LocalDate date,
+                  Integer bar) {
 }
