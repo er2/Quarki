@@ -1,5 +1,7 @@
 package com.quarki;
 
+import com.quarki.db.jooq.tables.pojos.Foo;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -20,6 +22,6 @@ public class ExampleResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Foo foo() {
-        return new Foo("bar", List.of(3,1,4), LocalDate.now(), 7);
+        return new Foo("bar", new Integer[]{3, 1, 4}, LocalDate.now(), 7);
     }
 }

@@ -1,6 +1,7 @@
 package com.quarki;
 
 
+import com.quarki.db.jooq.tables.pojos.Foo;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;

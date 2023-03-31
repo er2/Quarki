@@ -72,24 +72,12 @@ jooq {
                     database.apply {
                         name = "org.jooq.meta.postgres.PostgresDatabase"
                         inputSchema = "public"
-                        forcedTypes.addAll(listOf(
-                            ForcedType().apply {
-                                name = "varchar"
-                                includeExpression = ".*"
-                                includeTypes = "JSONB?"
-                            },
-                            ForcedType().apply {
-                                name = "varchar"
-                                includeExpression = ".*"
-                                includeTypes = "INET"
-                            }
-                        ))
                         excludes = "Databasechangelog.*"
                     }
                     generate.apply {
                         isDeprecated = false
-                        isRecords = true
-                        isImmutablePojos = true
+                        isPojosAsJavaRecordClasses = true
+                        isDaos = true
                         isFluentSetters = true
                     }
                     target.apply {

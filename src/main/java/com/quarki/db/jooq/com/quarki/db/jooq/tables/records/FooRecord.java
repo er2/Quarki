@@ -219,10 +219,10 @@ public class FooRecord extends TableRecordImpl<FooRecord> implements Record4<Str
         super(Foo.FOO);
 
         if (value != null) {
-            setName(value.getName());
-            setNums(value.getNums());
-            setDate(value.getDate());
-            setBar(value.getBar());
+            setName(value.name());
+            setNums(value.nums());
+            setDate(value.date());
+            setBar(value.bar());
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.quarki;
 
+import com.quarki.db.jooq.tables.pojos.Foo;
 import com.quarki.db.jooq.tables.records.FooRecord;
 import org.jooq.RecordMapper;
 import org.jooq.RecordUnmapper;
