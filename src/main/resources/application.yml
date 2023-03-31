@@ -1,0 +1,15 @@
+greeting:
+  message: "hello"
+
+quarkus:
+  datasource:
+    devservices:
+      enabled: true
+      devservices:
+        command:
+  banner:
+    enabled: false
+
+  liquibase:
+    migrate-at-start: true
+    change-log: db/changeLog.sql
