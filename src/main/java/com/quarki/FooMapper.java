@@ -1,5 +1,6 @@
 package com.quarki;
 
+import com.quarki.db.jooq.tables.records.FooRecord;
 import org.mapstruct.Mapper;
 
 import static org.mapstruct.MappingConstants.ComponentModel.CDI;
@@ -13,8 +14,8 @@ public interface FooMapper {
 //    @Mapping(target = "into", ignore = true)
 //    @Mapping(target = "getValue", ignore = true)
 //    @Mapping(target = "get", ignore = true)
-//    default FooRecord toRecord(Foo foo) {
-//        return new FooRecord(foo.name(), foo.nums().toArray(new Integer[0]), foo.date());
-//    }
+    default FooRecord toRecord(Foo foo) {
+        return new FooRecord(foo.name(), foo.nums().toArray(new Integer[0]), foo.date());
+    }
 
 }

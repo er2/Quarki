@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static com.quarki.db.jooq.tables.Foo.FOO;
+
 @Singleton
 public class FooService {
 
@@ -24,18 +26,9 @@ public class FooService {
     FooMapper fooMapper;
 
     public void insert(Foo foo) {
-//        InsertSetStep<FooRecord> rInsertQuery = dsl.insertInto(FOO);
-//        rInsertQuery.set(fooMapper.toRecord(foo))
-//                .execute();
-//        try (Connection connection = ds.getConnection();
-//             PreparedStatement preparedStatement = connection.prepareStatement("""
-//                     INSERT INTO FOO (NAME, NUMS, DATE) values (?, ?, ?);
-//                     """)) {
-//            preparedStatement.setString(1, foo.name());
-//            preparedStatement.setArray(2, connection.createArrayOf("INTEGER", foo.nums().toArray()));
-//            preparedStatement.setDate(3, java.sql.Date.valueOf(foo.date()));
-//            preparedStatement.execute();
-//        }
+        dsl.insertInto(FOO)
+                .set(fooMapper.toRecord(foo))
+                .execute();
     }
 
     private static final String getAllSql = """
