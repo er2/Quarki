@@ -1,4 +1,3 @@
-import org.jooq.meta.jaxb.ForcedType
 import org.jooq.meta.jaxb.Logging
 
 plugins {
@@ -38,7 +37,7 @@ dependencies {
     annotationProcessor("org.mapstruct:mapstruct-processor:1.5.3.Final")
 }
 
-group = "com.example"
+group = "com.quarki"
 version = "1.0-SNAPSHOT"
 
 java {
