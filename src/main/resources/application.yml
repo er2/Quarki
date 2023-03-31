@@ -5,11 +5,12 @@ quarkus:
   datasource:
     devservices:
       enabled: true
-      devservices:
-        command:
+      port: 5432
   banner:
     enabled: false
 
   liquibase:
     migrate-at-start: true
     change-log: db/changeLog.sql
+  jooq:
+    dialect: postgresql

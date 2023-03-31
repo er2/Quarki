@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseMigrationSettings">
+    <database-infos>
+      <database-info>
+        <option name="enabled" value="true" />
+        <dbms-id>postgres</dbms-id>
+      </database-info>
+    </database-infos>
+  </component>
+  <component name="ReverseEngineeringSettings">
+    <database-infos>
+      <database-info dbms-id="postgres">
+        <mapping-types>
+          <mapping-type sql-type="int4[]" java-class="com.quarki.db.IntArrMapper" use-column-definition="true" />
+        </mapping-types>
+      </database-info>
+    </database-infos>
+  </component>
+</project>
